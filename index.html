@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="media-admin.css">
   <link rel="stylesheet" href="search-ui.css">
   <link rel="stylesheet" href="catalog-filters.css">
+  <link rel="stylesheet" href="route-pages.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -25,6 +26,7 @@
     <button class="admin-nav-button" id="adminNavButton" hidden>⚙ Адмін-панель</button><button class="account-button" id="accountButton"><span class="account-avatar">♙</span><span id="accountButtonText">Увійти</span></button>
   </header>
   <main id="home">
+    <section class="home-carousel section-wrap" aria-label="Добірка фільмів"><div class="carousel-shelf"><div class="carousel-heading"><div><span class="eyebrow">ЩО ПОДИВИТИСЯ</span><h2>Добірка</h2></div></div><div class="carousel-stage"><button type="button" id="carouselPrev" class="carousel-arrow carousel-arrow-prev" aria-label="Попередні фільми добірки">‹</button><div class="carousel-track" id="homeCarousel"></div><button type="button" id="carouselNext" class="carousel-arrow carousel-arrow-next" aria-label="Наступні фільми добірки">›</button></div></div></section>
     <section class="hero" id="hero">
       <div class="hero-content"><span class="eyebrow"><i></i> ВИБІР РЕДАКЦІЇ</span><h1>Історії, які<br>залишаються з тобою</h1><p>Знаходь улюблене кіно, відкривай нові світи та обирай, що подивитися сьогодні.</p><div class="hero-actions"><a class="button button-primary" href="#catalog">Дивитися каталог <span>→</span></a><button class="button button-quiet" id="heroTrailer">▶ Трейлер</button></div><div class="hero-meta"><span>★ 8.7</span><span>Фантастика</span><span>2024</span></div></div>
       <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="planet"></div><div class="hero-caption">НОВИЙ СВІТ<br><small>ПОЧИНАЄТЬСЯ ЗАРАЗ</small></div></div>
@@ -38,6 +40,8 @@
     </section>
     <section class="note section-wrap"><div class="note-icon">✦</div><div><h3>Твій вечір. Твій вибір.</h3><p>Додавай відео та трейлери, на які маєш права, у файл <code>app.js</code>.</p></div><a href="#catalog" class="text-link">Обрати кіно →</a></section>
   </main>
+  <main id="searchPage" class="route-page" hidden><section class="section-wrap route-content"><a class="route-back" href="#home">← На головну</a><span class="eyebrow">КІНОСВІТ · ПОШУК</span><h1 id="searchPageTitle">Результати пошуку</h1><p id="searchPageSummary" class="route-summary"></p><div id="searchPageResults" class="route-results"></div></section></main>
+  <main id="moviePage" class="route-page" hidden><section class="section-wrap route-content"><a class="route-back" href="#home">← До каталогу</a><div id="moviePageContent"></div></section></main>
   <footer><a class="brand" href="#home"><span class="brand-mark">К</span>кіно<span>світ</span></a><p>Твій простір для хорошого кіно.</p><span>© 2026 КіноСвіт</span></footer>
   <dialog id="movieDialog" class="movie-dialog"><button class="dialog-close" aria-label="Закрити">×</button><div id="dialogBody"></div></dialog>
   <dialog id="authDialog" class="auth-dialog"><button class="dialog-close" id="authClose" aria-label="Закрити">×</button><div class="auth-content"><span class="eyebrow">ТВІЙ КІНОПРОФІЛЬ</span><h2 id="authTitle">Раді бачити!</h2><p class="auth-intro" id="authIntro">Увійди або створи акаунт, щоб мати свій профіль.</p><div class="auth-tabs"><button class="auth-tab active" data-mode="login">Вхід</button><button class="auth-tab" data-mode="register">Реєстрація</button></div><form id="authForm"><label id="nameField" hidden>Ім’я<input id="nameInput" autocomplete="name" maxlength="30" placeholder="Як до тебе звертатися?"></label><label>Електронна пошта<input id="emailInput" type="email" autocomplete="email" required placeholder="name@example.com"></label><label>Пароль<input id="passwordInput" type="password" autocomplete="current-password" required minlength="6" placeholder="Щонайменше 6 символів"></label><p class="auth-error" id="authError" role="alert"></p><button class="button button-primary auth-submit" id="authSubmit">Увійти</button></form><div id="profilePanel" hidden></div><p class="auth-footnote">Профіль і активність зберігаються лише у цьому браузері.</p></div></dialog>
